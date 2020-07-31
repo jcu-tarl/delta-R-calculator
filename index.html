@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script type="text/javascript" src="js/delta_r.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1>&Delta;R Calculator</h1>
+    <table border="0" width="100%">
+        <tr>
+            <td>Enter Latitude and Longitude (or click on the map). If &delta;13C and/or &delta;18O are known, enter
+                those, and click the button to calculate &Delta;R. An explanation of what you see may be found <a
+                        href="deltaRmethod/deltaRmethod.html">here</a></td>
+            <td align="right"><i>Revised 2020-06-04</i></td>
+        </tr>
+    </table>
+    <hr/>
+</div>
+<form>
+    <table>
+        <tr>
+            <th>Longitude:</th>
+            <td><input type="text" id="longitude" name="longitude" value="144"></td>
+            <td>Enter Decimal Longitude</td>
+        </tr>
+        <tr>
+            <th>Latitude:</th>
+            <td><input type="text" id="latitude" name="latitude" value="-38"></td>
+            <td>Enter Decimal Latitude</td>
+        </tr>
+        <tr>
+            <th>&delta;13C:</th>
+            <td><input type="text" id="d13C" name="d13C"></td>
+            <td>Enter &delta;13C. Zero is a value which will influence the result. If no &delta;13C value available,
+                empty the cell
+            </td>
+        </tr>
+        <tr>
+            <th>&delta;18O:</th>
+            <td><input type="text" id="d18O" name="d18O"></td>
+            <td>Enter &delta;18O. Zero is a value which will influence the result. If no &delta;18O value available,
+                empty the cell
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button"
+                        onclick="calculate(document.getElementById('latitude').value, document.getElementById('longitude').value,document.getElementById('d13C').value,document.getElementById('d18O').value)">
+                    Calculate &Delta;R
+                </button>
+    </table>
+</form>
+<div id="result" width="100%" height="100px"></div>
+<div id="stuff" width="100%" height="100px"></div>
+<script>get_coords();</script>
+<script>calculate(document.getElementById('latitude').value, document.getElementById('longitude').value, document.getElementById('d13C').value, document.getElementById('d18O').value);</script>
+<div id="image">
+    <a href="index.html">
+        <img src="aus.png" alt="My Image" ismap>
+    </a>
+</div>
+</body>
+</html>

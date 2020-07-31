@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
+<HEAD>
+<TITLE>Modelling of R values around the coast of Australia
+Method</TITLE>
+<META NAME="description" CONTENT="Modelling of R values around the coast of Australia
+Method">
+<META NAME="keywords" CONTENT="deltaRmethod">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="deltaRmethod.css">
+
+</HEAD>
+
+<BODY >
+<H1 ALIGN=CENTER>Modelling of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values around the coast of Australia
+<BR>
+Method</H1>
+<P ALIGN=CENTER><STRONG>Sean Ulm, Damien O'Grady (CABAH, JCU Cairns)</STRONG>
+</P>
+<HR>
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+182 Records of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R measurements containing <!-- MATH
+ $\delta^{18}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\delta ^{18}$"></SPAN>O and <!-- MATH
+ $\delta^{13}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$\delta ^{13}$"></SPAN>C values and Lat-Long coordinates were processed.  The distribution of sites is shown in Fig.&nbsp;<A HREF="#fig:sitedistribution">1</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:sitedistribution"></A><A NAME="21"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+Distribution of sites, with quantities shown where more than one occurs in close proximity</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>	<IMG
+  WIDTH="600" HEIGHT="476" ALIGN="BOTTOM" BORDER="0"
+ SRC="./site_distribution.png"
+ ALT="Image site_distribution"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+Method and results</A>
+</H1>
+
+<P>
+The intention was to model the <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values on location and other parameters. Given that site locations form a near continuous loop around the coast, for the purposes of the model, the latitude and longitude were converted to polar coordinates about the centre of the continent, so that the bearing formed a continuous loop with a period of 360<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$^\circ$"></SPAN>.
+
+<P>
+
+<H2><A NAME="SECTION00021000000000000000">
+Transformation of coordinates</A>
+</H2>
+
+<P>
+Bearing and distance were calculated for each data point from the central point with coordinates 134 East, 24 South.  Great Circle distance was calculated using the Haversine Formula, where
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+d = 2r\arcsin \left( \sqrt{\sin^2\left(\frac{\phi_2-\phi_1}{2}\right)+\cos(\phi_1)\cos(\phi_2)\sin^2\left(\frac{\lambda_2 - \lambda_1}{2}\right)} \right)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="522" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\displaystyle d = 2r\arcsin \left( \sqrt{\sin^2\left(\frac{\phi_2-\phi_1}{2}\ri...
+...\phi_1)\cos(\phi_2)\sin^2\left(\frac{\lambda_2 - \lambda_1}{2}\right)} \right) $">
+</DIV><P></P>
+
+<P>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$\phi_2$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\phi_1$"></SPAN> are the destination and starting point latitudes, and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\lambda_2$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\lambda_1$"></SPAN> the corresponding longitudes.  The radius <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$r$"></SPAN> of the spherical geoid model was taken to be 6,371&nbsp;km.  The angle <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$\theta$"></SPAN> used was the starting bearing from central point to traverse the distance path, calculated as
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+\theta = \mathrm{atan2} \left[\sin(\lambda_2-\lambda_1)\cos(\phi_2), \cos(\phi_1)\sin(\phi_2) - \sin(\phi_1)\cos(\phi_2)\cos(\lambda_2-\lambda_1)\right]
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="583" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\displaystyle \theta = \mathrm{atan2} \left[\sin(\lambda_2-\lambda_1)\cos(\phi_...
+...\phi_1)\sin(\phi_2) - \sin(\phi_1)\cos(\phi_2)\cos(\lambda_2-\lambda_1)\right] $">
+</DIV><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00022000000000000000">
+Models</A>
+</H2>
+The purpose of the modelling was to create a tool to predict <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values at any point around the coast, in situations where both, one or neither of <!-- MATH
+ $\delta^{18}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\delta ^{18}$"></SPAN>O and <!-- MATH
+ $\delta^{13}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$\delta ^{13}$"></SPAN>C were known.  For this reason, four models were run, using:
+
+<P>
+
+<OL>
+<LI>All parameters
+</LI>
+<LI>All except <!-- MATH
+ $\delta^{18}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\delta ^{18}$"></SPAN>O
+</LI>
+<LI>All except <!-- MATH
+ $\delta^{13}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$\delta ^{13}$"></SPAN>C
+</LI>
+<LI>Location only
+</LI>
+</OL>
+
+<P>
+Simple linear models with some interactions between the variables were used.  The following four tables show the model formulae and results summaries.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="tab:all"></A><A NAME="40"></A>
+<TABLE>
+<CAPTION><STRONG>Table 1:</STRONG>
+Model call and summary:  All variables</CAPTION>
+<TR><TD><IMG
+ WIDTH="584" HEIGHT="577" BORDER="0"
+ SRC="img13.png"
+ ALT="\begin{table}
+\begin{verbatim}Call:
+lm(formula = newDR&nbsp; sin(bfi) + cos(bfi...
+...-statistic: 36.85 on 10 and 154 DF, p-value: &lt; 2.2e-16\end{verbatim}
+\end{table}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="tab:location"></A><A NAME="46"></A>
+<TABLE>
+<CAPTION><STRONG>Table 2:</STRONG>
+Model call and summary:  Location only</CAPTION>
+<TR><TD><IMG
+ WIDTH="584" HEIGHT="512" BORDER="0"
+ SRC="img14.png"
+ ALT="\begin{table}
+\begin{verbatim}Call:
+lm(formula = newDR&nbsp; sin(bfi) + cos(bfi) ...
+...F-statistic: 37.56 on 7 and 157 DF, p-value: &lt; 2.2e-16\end{verbatim}
+\end{table}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="tab:no_do"></A><A NAME="86"></A>
+<TABLE>
+<CAPTION><STRONG>Table 3:</STRONG>
+Model call and summary:  without <!-- MATH
+ $\delta^{18}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\delta ^{18}$"></SPAN>O</CAPTION>
+<TR><TD><IMG
+ WIDTH="584" HEIGHT="534" BORDER="0"
+ SRC="img15.png"
+ ALT="\begin{table}
+\begin{verbatim}Call:
+lm(formula = newDR&nbsp; sin(bfi) + cos(bfi) ...
+...F-statistic: 35.06 on 8 and 156 DF, p-value: &lt; 2.2e-16\end{verbatim}
+\end{table}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="tab:no_dc"></A><A NAME="87"></A>
+<TABLE>
+<CAPTION><STRONG>Table 4:</STRONG>
+Model call and summary:  without <!-- MATH
+ $\delta^{13}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$\delta ^{13}$"></SPAN>C</CAPTION>
+<TR><TD><IMG
+ WIDTH="584" HEIGHT="534" BORDER="0"
+ SRC="img16.png"
+ ALT="\begin{table}
+\begin{verbatim}Call:
+lm(formula = newDR&nbsp; sin(bfi) + cos(bfi) ...
+...F-statistic: 33.09 on 8 and 156 DF, p-value: &lt; 2.2e-16\end{verbatim}
+\end{table}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<H1><A NAME="SECTION00030000000000000000">
+Conclusion</A>
+</H1>
+
+<P>
+An R<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$^2$"></SPAN> value of 0.69 for the full model was considered reasonable.  Although it can be argued that a model using location as a predictor can always be manipulated to compliance, given sufficient complexity and a measure of over-fitting, the fact that varied data existed in the same locations that were distinguished by their <!-- MATH
+ $\delta^{18}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\delta ^{18}$"></SPAN>O and <!-- MATH
+ $\delta^{13}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$\delta ^{13}$"></SPAN>C values alone, lends some weight to the observed R<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$^2$"></SPAN> value.  What should also be considered is the fact that the purpose of the exercise was to produce a tool to predict <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values within the domain of observed <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values.  Fig.&nbsp;<A HREF="#fig:scatter">2</A> shows predicted <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R against measured <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R for all sites using the full model.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:scatter"></A><A NAME="68"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+Predicted <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R against measured <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R for all sites using all predictors. The dashed lines are 1 standard error from y=x.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>	<IMG
+  WIDTH="600" HEIGHT="600" ALIGN="BOTTOM" BORDER="0"
+ SRC="./scatter.png"
+ ALT="Image scatter"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Predicted <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values for both the full model and the location-only model are shown in Fig.&nbsp;<A HREF="#fig:withwithout">3</A>, in the context of location.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:withwithout"></A><A NAME="74"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+Predicted <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R using all parameters (red) and location only (blue) against bearing from the centre of the continent.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>	<IMG
+  WIDTH="600" HEIGHT="400" ALIGN="BOTTOM" BORDER="0"
+ SRC="./with_without.png"
+ ALT="Image with_without"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Model coefficients and variance-covariance matrices corresponding to each of the models were formed into javascript multi-dimensional arrays, which were configured to calculate a <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R prediction with and without either of the <!-- MATH
+ $\delta^{18}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\delta ^{18}$"></SPAN>O and <!-- MATH
+ $\delta^{13}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$\delta ^{13}$"></SPAN>C values, using the resultant models.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:deltar"></A><A NAME="81"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R predictions at locations around the coast of Australia, using the location-only model.  Standard error is shown in brackets for each.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>	<IMG
+  WIDTH="600" HEIGHT="520" ALIGN="BOTTOM" BORDER="0"
+ SRC="./deltaR.png"
+ ALT="Image deltaR"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H1><A NAME="SECTION00040000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>Modelling of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\Delta $"></SPAN>R values around the coast of Australia
+<BR>
+Method</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2018 (Released Feb 1, 2018)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+Nikos Drakos, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-split 0 -nonavigation deltaRmethod</TT>
+<P>
+The translation was initiated on 2020-05-05
+<BR><HR>
+
+</BODY>
+</HTML>
