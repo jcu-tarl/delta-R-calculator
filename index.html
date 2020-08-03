@@ -5,9 +5,12 @@
   <title>&Delta;R Calculator</title>
   <script type="text/javascript" src="js/delta_r.js"></script>
 
-  <!--- JCU Cookbook --->
+  <!-- JCU Cookbook -->
   <link rel="stylesheet" href="https://cdn.jcu.edu.au/web-framework/2.0.0-alpha.7/css/jcu-web-framework.min.css">
   <link rel="stylesheet" href="https://cdn.jcu.edu.au/web-framework/2.0.0-alpha.7/css/fonts.min.css">
+
+  <!-- Extra CSS -->
+  <link rel="stylesheet" href="style.css">
 
   <!-- Page.js -->
   <!-- TODO: download rather than using cdn --->
@@ -15,65 +18,160 @@
 
 </head>
 <body>
-<div id="header">
+<header class="header">
 
-  <h1>&Delta;R Calculator</h1>
-  <table border="0" width="100%">
-    <tr>
-      <td>Enter Latitude and Longitude (or click on the map). If &delta;13C and/or &delta;18O are known, enter
-        those, and click the button to calculate &Delta;R. An explanation of what you see may be found <a
-            href="deltaRmethod/deltaRmethod.html">here</a></td>
-      <td align="right"><i>Revised 2020-06-04</i></td>
-    </tr>
-  </table>
-  <hr/>
+  <nav class="flex-column p-0 navbar navbar-expand-lg navbar-light mb-3">
+    <div class="p-1 pb-sm-2 container-lg">
+      <span class="navbar-brand">
+        <div class="brand-logo">
+          <a href="https://www.jcu.edu.au">
+            <img src="https://cdn.jcu.edu.au/cookbook/2.0.0-alpha.8/img/logos/jcu-logo-horizontal.svg"
+                 alt="James Cook University (JCU) Australia logo" class="brand-logo-img">
+          </a>
+          <a class="brand-logo-sitename text-reset" href="/"> &Delta;R Calculator</a>
+        </div>
+      </span>
+      <span>
+      <span class="lead">Revised 2020-06-04 </span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+              aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </span>
+    </div>
+
+    <div class="w-100 bg-light">
+      <div class="navbar-expand-lg container-lg px-lg-0">
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <!-- TODO: update to use router -->
+              <a class="nav-link" href="deltaRmethod/deltaRmethod.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<div class="container">
+  <div class="row">
+    <h1>&Delta;R Calculator</h1>
+    <!-- TODO: update to use router -->
+    <p>
+      Enter Latitude and Longitude (or click on the map). If &delta;13C and/or &delta;18O are known, enter those, and
+      click the button to calculate &Delta;R. An explanation of what you see may be found on the
+      <a href="deltaRmethod/deltaRmethod.html">about page</a>.
+    </p>
+  </div>
+
+  <div class="bs-component">
+    <form>
+      <fieldset>
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <label for="longitude">Longitude:</label>
+            <input type="number" step=".000001" class="form-control" id="longitude" aria-describedby="longitude"
+                   placeholder="Enter decimal longitude">
+          </div>
+
+          <div class="form-group col-lg-6">
+            <label for="latitude">Latitude:</label>
+            <input type="number" step=".000001" class="form-control" id="latitude" aria-describedby="latitude"
+                   placeholder="Enter decimal latitude">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <label for="d13C">&delta;13C:</label>
+            <input type="number" step=".000001" class="form-control" id="d13C" aria-describedby="d13C"
+                   placeholder="Enter &delta;13C">
+            <small id="d13Chelp" class="form-text text-muted">
+              A zero value will influence the result. If no &delta;13C value available, empty the cell.
+            </small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label for="d180">&delta;180:</label>
+            <input type="number" step=".000001" class="form-control" id="d180" aria-describedby="d180"
+                   placeholder="Enter &delta;180">
+            <small id="d180help" class="form-text text-muted">
+              A zero value will influence the result. If no &delta;180 value available, empty the cell.
+            </small>
+          </div>
+        </div>
+
+        <div class="row">
+          <button type="button" class="btn btn-primary btn-lg btn-block" onclick="calculate_deltaR() ">
+            Calculate &Delta;R
+          </button>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+
+
+
+  <div class="row text-center mt-3">
+    <div class="col col-12 ">
+      <!-- TODO: format to match style - remove id="stuff" ? -->
+      <div id="result" width="100%" height="100px"></div>
+      <div id="stuff" width="100%" height="100px"></div>
+    </div>
+
+    <div class="col col-12">
+      <div id="image">
+        <a href="index.html">
+          <img src="aus.png" alt="My Image" ismap>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
-<form>
-  <table>
-    <tr>
-      <th>Longitude:</th>
-      <td><input type="text" id="longitude" name="longitude" value="144"></td>
-      <td>Enter Decimal Longitude</td>
-    </tr>
-    <tr>
-      <th>Latitude:</th>
-      <td><input type="text" id="latitude" name="latitude" value="-38"></td>
-      <td>Enter Decimal Latitude</td>
-    </tr>
-    <tr>
-      <th>&delta;13C:</th>
-      <td><input type="text" id="d13C" name="d13C"></td>
-      <td>Enter &delta;13C. Zero is a value which will influence the result. If no &delta;13C value available,
-        empty the cell
-      </td>
-    </tr>
-    <tr>
-      <th>&delta;18O:</th>
-      <td><input type="text" id="d18O" name="d18O"></td>
-      <td>Enter &delta;18O. Zero is a value which will influence the result. If no &delta;18O value available,
-        empty the cell
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <button type="button"
-                onclick="calculate(document.getElementById('latitude').value, document.getElementById('longitude').value,document.getElementById('d13C').value,document.getElementById('d18O').value)">
-          Calculate &Delta;R
-        </button>
-  </table>
-</form>
 
-<div id="result" width="100%" height="100px"></div>
-<div id="stuff" width="100%" height="100px"></div>
-<script>get_coords();</script>
-<script>calculate(document.getElementById('latitude').value, document.getElementById('longitude').value, document.getElementById('d13C').value, document.getElementById('d18O').value);</script>
+<footer>
+  <div class="py-3 bg-light text-dark" id="footer-global">
+    <div class="container-md">
+      <div class="justify-content-center text-center small row">
+        <div class="mr-lg-auto col-lg-auto col-12">
+          <ul class="list-unstyled list-business-info">
+            <li><abbr title="Copyright">©</abbr> 1995 to 2020 James Cook University</li>
+            <li><a href="https://www.jcu.edu.au/cricos"><abbr
+                title="Commonwealth Register of Institutions and Courses for Overseas Students">CRICOS</abbr> Provider
+              Code 00117J</a></li>
+            <li><abbr title="Australian Business Number">ABN</abbr> 46253211955</li>
+          </ul>
+        </div>
+        <div class="col-lg-auto col-12">
+          <ul class="list-inline list-inline-bordered">
+            <li class="list-inline-item"><a href="https://www.jcu.edu.au/terms-of-use">Terms of use</a></li>
+            <li class="list-inline-item"><a href="https://www.jcu.edu.au/privacy">Privacy</a></li>
+            <li class="list-inline-item"><a href="https://www.jcu.edu.au/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<div id="image">
-  <a href="index.html">
-    <img src="aus.png" alt="My Image" ismap>
-  </a>
-</div>
+<!-- moved down from further up -->
+<script>
+    get_coords();
+
+    // TODO: have the JS get the values?
+    function calculate_deltaR() {
+        calculate(document.getElementById('latitude').value, document.getElementById('longitude').value,
+            document.getElementById('d13C').value, document.getElementById('d180').value);
+    }
+
+    calculate_deltaR();
+</script>
 
 
 <!--- JCU Cookbook --->
