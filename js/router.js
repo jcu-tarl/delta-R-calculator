@@ -8,7 +8,7 @@ var loaded = '';
 
 function calculate_deltaR() {
     calculate(document.getElementById('latitude').value, document.getElementById('longitude').value,
-        document.getElementById('d13C').value, document.getElementById('d180').value);
+        document.getElementById('d13C').value, document.getElementById('d18O').value);
 }
 
 function calculate_query_param_deltaR() {

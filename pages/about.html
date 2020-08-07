@@ -1,1 +1,109 @@
-<p>this is the about page</p>
+<div class="row">
+  <h1>Modelling of ΔR values around the coast of Australia Method
+    <small class="text-muted">Sean Ulm, Damien O'Grady (CABAH, JCU Cairns)</small>
+  </h1>
+</div>
+
+<div class="row">
+  <h2> Introduction </h2>
+  <p>
+    182 Records of ΔR measurements containing &delta;<sup>18</sup>O and &delta;<sup>13</sup>C values and Lat-Long
+    coordinates were processed. The distribution of sites is shown in Fig. 1.
+    <!--    link fig 1? -->
+  </p>
+
+  <figure class="text-center w-100">
+    <!--    TODO: don't have set height/width and add alt text-->
+    <img src="deltaRmethod/site_distribution.png" height="476"/>
+    <figcaption>
+      <strong>Figure 1:</strong> Distribution of sites, with quantities shown where more than one occurs in close
+      proximity
+    </figcaption>
+  </figure>
+</div>
+
+<div class="row">
+  <h2>
+    Method and results
+  </h2>
+  <p>
+    The intention was to model the ΔR values on location and other parameters. Given that site locations form a
+    near continuous loop around the coast, for the purposes of the model, the latitude and longitude were converted to
+    polar coordinates about the centre of the continent, so that the bearing formed a continuous loop with a period of
+    360°.
+  </p>
+
+  <h3>
+
+    Transformation of coordinates
+  </h3>
+
+  <p>
+    Bearing and distance were calculated for each data point from the central point with coordinates 134 East, 24 South.
+    Great Circle distance was calculated using the Haversine Formula, where
+  </p>
+
+  <!--    TODO: don't have set height/width and add alt text-->
+  <img src="deltaRmethod/img5.png">
+
+  <p>
+    &Phi;<sub>2</sub> and &Phi;<sub>1</sub> are the destination and starting point latitudes, and &lambda;<sub>2</sub>
+    and &lambda;<sub>1</sub> the corresponding longitudes. The radius $r$ of the spherical geoid model was taken to be 6,371 km. The
+      angle $\theta$
+      used was the starting bearing from central point to traverse the distance path, calculated as
+      <!--  TODO put more math in here -->
+  </p>
+
+  <!--    TODO: don't have set height/width and add alt text-->
+  <img src="deltaRmethod/img12.png">
+
+  <br>
+  <!-- todo: fix up greek symbols -->
+  <h3>
+    Models
+  </h3>
+  <p>
+    The purpose of the modelling was to create a tool to predict $\Delta $R values at any point around the coast, in
+    situations where both, one or neither of $\delta ^{18}$O and $\delta ^{13}$C were known. For this reason, four
+    models were run, using:
+  <ol>
+    <li>All parameters</li>
+    <li>All except $\delta ^{18}$O</li>
+    <li>All except $\delta ^{13}$C</li>
+    <li>Location only</li>
+  </ol>
+  Simple linear models with some interactions between the variables were used. The following four tables show the model
+  formulae and results summaries.
+  </p>
+
+  <!--  TODO: results tables go here - make actual tables? -->
+
+</div>
+
+<div class="row">
+  <h2>
+    Conclusion
+  </h2>
+  <p>
+    An R$^2$ value of 0.69 for the full model was considered reasonable. Although it can be argued that a model using
+    location as a predictor can always be manipulated to compliance, given sufficient complexity and a measure of
+    over-fitting, the fact that varied data existed in the same locations that were distinguished by their $\delta
+    ^{18}$O and $\delta ^{13}$C values alone, lends some weight to the observed R$^2$ value. What should also be
+    considered is the fact that the purpose of the exercise was to produce a tool to predict $\Delta $R values within
+    the domain of observed $\Delta $R values. Fig. 2 shows predicted $\Delta $R against measured $\Delta $R for all
+    sites using the full model.
+  </p>
+
+  <!--  img -->
+  <p>
+    Predicted $\Delta $R values for both the full model and the location-only model are shown in Fig. 3, in the context
+    of location.
+  </p>
+  <!--  img -->
+  <p>
+    Model coefficients and variance-covariance matrices corresponding to each of the models were formed into javascript
+    multi-dimensional arrays, which were configured to calculate a $\Delta $R prediction with and without either of the
+    $\delta ^{18}$O and $\delta ^{13}$C values, using the resultant models.
+  </p>
+  <!--  img -->
+</div>
