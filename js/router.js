@@ -1,5 +1,6 @@
 page.base('/delta-R-calculator');
 page('/', go_to_page);
+page('/index.html', go_to_page);
 page('*', not_found);
 page(get_coords_and_calculate);
 page();
