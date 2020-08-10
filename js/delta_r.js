@@ -98,7 +98,7 @@ var coastal_coords = [[285,180],[318,144],[361,152],[387,121],[432,103],[478,109
 
 function calculate(latitude, longitude, d13C, d18O){
 	if(!latitude || !longitude){
-		document.getElementById("result").innerHTML="<h1 style='color:red'>You must select a point on the Australian coast.</h1>";
+		document.getElementById("result").innerHTML="<h2 class='text-danger'>You must select a point on the Australian coast.</h2>";
 		return 0;
 	}
 	var coefs = [];
@@ -140,8 +140,8 @@ function calculate(latitude, longitude, d13C, d18O){
 	const dR = MMult(predictors, transpose(coefs));
 	const se = Math.sqrt(MMult(predictors, MMult(vcov, transpose(predictors))));
 	document.getElementById("result").innerHTML=""
-		+ "<h1>&Delta;R:" + parseFloat(dR).toFixed(2) + "&nbsp;&nbsp;"
-		+ "&epsilon;:" + parseFloat(se).toFixed(2) + "</h1>";
+		+ "<h2>&Delta;R: " + parseFloat(dR).toFixed(2) + "&nbsp;&nbsp;"
+		+ "&epsilon;: " + parseFloat(se).toFixed(2) + "</h2>";
 
 }
 

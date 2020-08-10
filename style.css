@@ -23,7 +23,11 @@
     padding-right: 1em;
 }
 
-@media(min-width: 768px) {
+.font-sans {
+    font-family: "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (min-width: 768px) {
     .brand-logo-img {
         height: 4rem;
     }
@@ -35,12 +39,12 @@
     }
 }
 
-@media(min-width: 992px) {
-    .list-business-info>li {
+@media (min-width: 992px) {
+    .list-business-info > li {
         display: inline-block;
     }
 
-    .list-business-info>li:not(:last-child) {
+    .list-business-info > li:not(:last-child) {
         border-right: 1px solid #adb5bd;
         margin-right: 1em;
         padding-right: 1em;
