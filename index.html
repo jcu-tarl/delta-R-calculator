@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>&Delta;R Calculator</title>
-  <!-- update to have router.js import delta_r.js ? -->
-  <script type="text/javascript" src="js/delta_r.js"></script>
 
   <!-- JCU Cookbook -->
   <link rel="stylesheet" href="https://cdn.jcu.edu.au/web-framework/2.0.0-alpha.7/css/jcu-web-framework.min.css">
@@ -13,9 +11,11 @@
   <!-- Extra CSS -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- JS for calculation -->
+  <script type="text/javascript" src="js/delta_r.js"></script>
+
   <!-- Page.js -->
-  <!-- TODO: download rather than using cdn --->
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="node_modules/page/page.js"></script>
 
 </head>
 
@@ -89,6 +89,7 @@
   </div>
 </footer>
 
+<!-- JS for routing -->
 <script src="js/router.js"> </script>
 
 <!--- JCU Cookbook --->
