@@ -5,7 +5,7 @@
 
 .brand-logo-sitename {
     display: inline-block;
-    max-width: 25vw;
+    max-width: 35vw;
     white-space: normal;
     vertical-align: text-top;
     margin-left: .75rem;
@@ -25,6 +25,25 @@
 
 .font-sans {
     font-family: "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.nav-link:hover {
+    font-weight: 600;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    margin: 0.15rem auto 0;
+    background: transparent;
+    transition: width 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    background-color: #53565a; /* dark */
 }
 
 @media (min-width: 768px) {
@@ -48,5 +67,9 @@
         border-right: 1px solid #adb5bd;
         margin-right: 1em;
         padding-right: 1em;
+    }
+
+    .brand-logo-sitename {
+        max-width: 25vw;
     }
 }
