@@ -1,62 +1,74 @@
 <div class="row">
-  <h1 class="font-sans">Modelling of ΔR values around the coast of Australia Method
-    <br/>
-    <small class="text-muted">Sean Ulm, Damien O'Grady (CABAH, JCU Cairns)</small>
-  </h1>
+  <div class="col-12">
+    <h1 class="font-sans">Modelling of ΔR values around the coast of Australia Method
+      <br/>
+      <small class="text-muted">Sean Ulm, Damien O'Grady (CABAH, JCU Cairns)</small>
+    </h1>
+  </div>
 </div>
 
 <div class="row">
-  <h2>Introduction</h2>
-  <p>
-    182 Records of ΔR measurements containing &delta;<sup>18</sup>O and &delta;<sup>13</sup>C values and Lat-Long
-    coordinates were processed. The distribution of sites is shown in Fig. 1.
-  </p>
+  <div class="col-12">
+    <h2>Introduction</h2>
+    <p>
+      182 Records of ΔR measurements containing &delta;<sup>18</sup>O and &delta;<sup>13</sup>C values and Lat-Long
+      coordinates were processed. The distribution of sites is shown in Fig. 1.
+    </p>
+  </div>
 
-  <figure class="text-center w-100">
-    <img class="mw-100" src="img/site_distribution.png" alt="Distribution of sites"/>
-    <figcaption>
-      <strong>Figure 1:</strong>
-      Distribution of sites, with quantities shown where more than one occurs in close proximity.
-    </figcaption>
-  </figure>
+  <div class="col-12">
+    <figure class="text-center">
+      <img class="mw-100" src="img/site_distribution.png" alt="Distribution of sites"/>
+      <figcaption>
+        <strong>Figure 1:</strong>
+        Distribution of sites, with quantities shown where more than one occurs in close proximity.
+      </figcaption>
+    </figure>
+  </div>
 </div>
 
 <div class="row">
-  <h2>Method and results</h2>
-  <p>
-    The intention was to model the ΔR values on location and other parameters. Given that site locations form a
-    near continuous loop around the coast, for the purposes of the model, the latitude and longitude were converted to
-    polar coordinates about the centre of the continent, so that the bearing formed a continuous loop with a period of
-    360°.
-  </p>
+  <div class="col-12">
+    <h2>Method and results</h2>
+    <p>
+      The intention was to model the ΔR values on location and other parameters. Given that site locations form a
+      near continuous loop around the coast, for the purposes of the model, the latitude and longitude were converted to
+      polar coordinates about the centre of the continent, so that the bearing formed a continuous loop with a period of
+      360°.
+    </p>
+  </div>
 
-  <h3>Transformation of coordinates</h3>
-  <p>
-    Bearing and distance were calculated for each data point from the central point with coordinates 134 East, 24 South.
-    Great Circle distance was calculated using the Haversine Formula, where
-  </p>
+  <div class="col-12">
+    <h3>Transformation of coordinates</h3>
+    <p>
+      Bearing and distance were calculated for each data point from the central point with coordinates 134 East, 24
+      South.
+      Great Circle distance was calculated using the Haversine Formula, where
+    </p>
+  </div>
 
-  <div class="text-center w-100">
+  <div class="col-12 text-center">
     <img class="mw-100" src="img/img5.png"
          alt="d = 2r\arcsin \left( \sqrt{\sin^2\left(\frac{\phi_2-\phi_1}{2}\right)+\cos(\phi_1)\cos(\phi_2)\sin^2\left(\frac{\lambda_2 - \lambda_1}{2}\right)} \right)">
   </div>
 
-  <p>
-    &Phi;<sub>2</sub> and &Phi;<sub>1</sub> are the destination and starting point latitudes, and &lambda;<sub>2</sub>
-    and &lambda;<sub>1</sub> the corresponding longitudes. The radius <em>r</em> of the spherical geoid model was taken
-    to be 6,371 km. The angle &theta; used was the starting bearing from central point to traverse the distance path,
-    calculated as
-  </p>
+  <div class="col-12">
+    <p>
+      &Phi;<sub>2</sub> and &Phi;<sub>1</sub> are the destination and starting point latitudes, and &lambda;<sub>2</sub>
+      and &lambda;<sub>1</sub> the corresponding longitudes. The radius <em>r</em> of the spherical geoid model was
+      taken
+      to be 6,371 km. The angle &theta; used was the starting bearing from central point to traverse the distance path,
+      calculated as
+    </p>
+  </div>
 
-  <div class="text-center w-100">
+  <div class="col-12 text-center">
     <img class="mw-100" src="img/img12.png"
          alt="\theta = \mathrm{atan2} \left[\sin(\lambda_2-\lambda_1)\cos(\phi_2), \cos(\phi_1)\sin(\phi_2) - \sin(\phi_1)\cos(\phi_2)\cos(\lambda_2-\lambda_1)\right]">
   </div>
 
-  <div>
-    <h3>
-      Models
-    </h3>
+  <div class="col-12">
+    <h3>Models</h3>
     <p>
       The purpose of the modelling was to create a tool to predict &Delta;R values at any point around the coast, in
       situations where both, one or neither of &delta;<sup>18</sup>O and &delta;<sup>13</sup>C were known. For this
@@ -74,86 +86,115 @@
     </p>
   </div>
 
-  <figure class="text-center w-100 mb-5">
-    <figcaption>
-      <strong>Table 1:</strong> Model call and summary: All variables
-    </figcaption>
-    <img class="mw-100" src="img/img13.png" alt="Model call and summary: All variables"/>
-  </figure>
+  <div class="col-12">
+    <figure class="text-center w-100 mb-5">
+      <figcaption>
+        <strong>Table 1:</strong> Model call and summary: All variables
+      </figcaption>
+      <img class="mw-100" src="img/img13.png" alt="Model call and summary: All variables"/>
+    </figure>
+  </div>
 
-  <figure class="text-center w-100 mb-5">
-    <figcaption>
-      <strong>Table 2:</strong> Model call and summary: Location only
-    </figcaption>
-    <img class="mw-100" src="img/img14.png" alt="Model call and summary: Location only"/>
-  </figure>
+  <div class="col-12">
+    <figure class="text-center w-100 mb-5">
+      <figcaption>
+        <strong>Table 2:</strong> Model call and summary: Location only
+      </figcaption>
+      <img class="mw-100" src="img/img14.png" alt="Model call and summary: Location only"/>
+    </figure>
+  </div>
 
-  <figure class="text-center w-100 mb-5">
-    <figcaption>
-      <strong>Table 3:</strong> Model call and summary: without &delta;<sup>18</sup>O</li>
-    </figcaption>
-    <img class="mw-100" src="img/img15.png" alt="Model call and summary: without delta18O"/>
-  </figure>
+  <div class="col-12">
+    <figure class="text-center w-100 mb-5">
+      <figcaption>
+        <strong>Table 3:</strong> Model call and summary: without &delta;<sup>18</sup>O</li>
+      </figcaption>
+      <img class="mw-100" src="img/img15.png" alt="Model call and summary: without delta18O"/>
+    </figure>
+  </div>
 
-  <figure class="text-center w-100 mb-5">
-    <figcaption>
-      <strong>Table 4:</strong> Model call and summary: without &delta;<sup>13</sup>C</li>
-    </figcaption>
-    <img class="mw-100" src="img/img16.png" alt="Model call and summary: without delta13C"/>
-  </figure>
+  <div class="col-12">
+    <figure class="text-center w-100 mb-5">
+      <figcaption>
+        <strong>Table 4:</strong> Model call and summary: without &delta;<sup>13</sup>C</li>
+      </figcaption>
+      <img class="mw-100" src="img/img16.png" alt="Model call and summary: without delta13C"/>
+    </figure>
+  </div>
 
 </div>
 
 <div class="row">
-  <h2>Conclusion</h2>
-  <p>
-    An R<sup>2</sup> value of 0.69 for the full model was considered reasonable. Although it can be argued that a model
-    using location as a predictor can always be manipulated to compliance, given sufficient complexity and a measure of
-    over-fitting, the fact that varied data existed in the same locations that were distinguished by their &delta;<sup>18</sup>O
-    and &delta;<sup>13</sup>C values alone, lends some weight to the observed R<sup>2</sup> value. What should also be
-    considered is the fact that the purpose of the exercise was to produce a tool to predict &Delta;R values within
-    the domain of observed &Delta;R values. Fig. 2 shows predicted &Delta;R against measured &Delta;R for all
-    sites using the full model.
-  </p>
 
-  <figure class="text-center w-100">
-    <img class="mw-100" src="img/scatter.png"
-         alt="Scatter plot of predicted DeltaR for all sites using all predictors"/>
-    <figcaption>
-      <strong>Figure 2:</strong> Predicted &Delta;R for all sites using all predictors. The dashed lines are 1 standard
-      error from y=x.
-    </figcaption>
-  </figure>
+  <div class="col-12">
+    <h2>Conclusion</h2>
+    <p>
+      An R<sup>2</sup> value of 0.69 for the full model was considered reasonable. Although it can be argued that a
+      model
+      using location as a predictor can always be manipulated to compliance, given sufficient complexity and a measure
+      of
+      over-fitting, the fact that varied data existed in the same locations that were distinguished by their
+      &delta;<sup>18</sup>O
+      and &delta;<sup>13</sup>C values alone, lends some weight to the observed R<sup>2</sup> value. What should also be
+      considered is the fact that the purpose of the exercise was to produce a tool to predict &Delta;R values within
+      the domain of observed &Delta;R values. Fig. 2 shows predicted &Delta;R against measured &Delta;R for all
+      sites using the full model.
+    </p>
+  </div>
 
-  <p>
-    Predicted &Delta;R values for both the full model and the location-only model are shown in Fig. 3, in the context
-    of location.
-  </p>
+  <div class="col-12">
+    <figure class="text-center w-100">
+      <img class="mw-100" src="img/scatter.png"
+           alt="Scatter plot of predicted DeltaR for all sites using all predictors"/>
+      <figcaption>
+        <strong>Figure 2:</strong> Predicted &Delta;R for all sites using all predictors. The dashed lines are 1
+        standard
+        error from y=x.
+      </figcaption>
+    </figure>
+  </div>
 
-  <figure class="text-center w-100">
-    <img class="mw-100" src="img/with_without.png" alt="Predicted DeltaR using all parameters and location only"/>
-    <figcaption>
-      <strong>Figure 3:</strong> Predicted &Delta;R using all parameters (red) and location only (blue) against bearing
-      from the centre of the continent.
-    </figcaption>
-  </figure>
+  <div class="col-12">
+    <p>
+      Predicted &Delta;R values for both the full model and the location-only model are shown in Fig. 3, in the context
+      of location.
+    </p>
+  </div>
 
-  <p>
-    Model coefficients and variance-covariance matrices corresponding to each of the models were formed into javascript
-    multi-dimensional arrays, which were configured to calculate a &Delta;R prediction with and without either of the
-    &delta;<sup>18</sup>O and &delta;<sup>13</sup>C values, using the resultant models.
-  </p>
+  <div class="col-12">
+    <figure class="text-center w-100">
+      <img class="mw-100" src="img/with_without.png" alt="Predicted DeltaR using all parameters and location only"/>
+      <figcaption>
+        <strong>Figure 3:</strong> Predicted &Delta;R using all parameters (red) and location only (blue) against
+        bearing
+        from the centre of the continent.
+      </figcaption>
+    </figure>
+  </div>
 
-  <figure class="text-center w-100">
-    <img class="mw-100" src="img/deltaR.png"
-         alt="DeltaR predictions around the coast of Australia using the location-only model"/>
-    <figcaption>
-      <strong>Figure 4:</strong> &Delta;R predictions at locations around the coast of Australia, using the
-      location-only model. Standard error is shown in brackets for each.
-    </figcaption>
-  </figure>
+  <div class="col-12">
+    <p>
+      Model coefficients and variance-covariance matrices corresponding to each of the models were formed into
+      javascript
+      multi-dimensional arrays, which were configured to calculate a &Delta;R prediction with and without either of the
+      &delta;<sup>18</sup>O and &delta;<sup>13</sup>C values, using the resultant models.
+    </p>
+  </div>
+
+  <div class="col-12">
+    <figure class="text-center w-100">
+      <img class="mw-100" src="img/deltaR.png"
+           alt="DeltaR predictions around the coast of Australia using the location-only model"/>
+      <figcaption>
+        <strong>Figure 4:</strong> &Delta;R predictions at locations around the coast of Australia, using the
+        location-only model. Standard error is shown in brackets for each.
+      </figcaption>
+    </figure>
+  </div>
 </div>
 
-<div>
-  <small>Last updated 2020-05-05</small>
+<div class="row">
+  <div class="col-12">
+    <small>Last updated 2020-05-05</small>
+  </div>
 </div>
