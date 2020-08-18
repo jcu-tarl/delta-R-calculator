@@ -45,6 +45,9 @@
     width: 100%;
     background-color: #53565a; /* dark */
 }
+.navbar-light .navbar-toggler {
+    border: none;
+}
 
 @media (min-width: 768px) {
     .brand-logo-img {
