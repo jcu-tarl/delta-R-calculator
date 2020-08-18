@@ -189,7 +189,6 @@ function bearing(lon2, lat2){
 }
 
 function get_coords(){
-    // TODO: let people know that this has changed
 	const queryString = window.location;
 	const re = /\?(\d+),(\d+)/;
 	var xy = re.exec(queryString);
