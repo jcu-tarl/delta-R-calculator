@@ -98,7 +98,7 @@ var coastal_coords = [[285,180],[318,144],[361,152],[387,121],[432,103],[478,109
 
 function calculate(latitude, longitude, d13C, d18O){
 	if(!latitude || !longitude){
-		document.getElementById("result").innerHTML="<h2 class='text-danger'>You must select a point on the Australian coast.</h2>";
+		document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
 		return 0;
 	}
 	var coefs = [];
