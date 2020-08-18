@@ -6,4 +6,4 @@ At the moment looking into how to best change to match JCU styling until the mee
 
 [Original site](http://deltar.damienogrady.com/index.html)
 
-[Github pages link](https://jcu-eresearch.github.io/delta-R-calculator/)
+[Github pages link](https://jcu-tarl.github.io/delta-R-calculator/)
