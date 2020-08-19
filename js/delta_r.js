@@ -140,8 +140,8 @@ function calculate(latitude, longitude, d13C, d18O){
 	const dR = MMult(predictors, transpose(coefs));
 	const se = Math.sqrt(MMult(predictors, MMult(vcov, transpose(predictors))));
 	document.getElementById("result").innerHTML=""
-		+ "<h2>&Delta;R: " + parseFloat(dR).toFixed(2) + "&nbsp;&nbsp;"
-		+ "&epsilon;: " + parseFloat(se).toFixed(2) + "</h2>";
+		+ "<div class='alert alert-success' role='alert'>&Delta;R: " + parseFloat(dR).toFixed(2) + "&nbsp;&nbsp;"
+		+ "&epsilon;: " + parseFloat(se).toFixed(2) + "</div>";
 
 }
 
