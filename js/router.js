@@ -1,4 +1,4 @@
-page.base('/delta-R-calculator');
+page.base('/');
 page('/', go_to_page);
 page('/index.html', go_to_page);
 page('*', not_found);
