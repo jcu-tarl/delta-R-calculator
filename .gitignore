@@ -1,3 +1,4 @@
 # Ignore IDE and Mac extras
 .DS_Store
 .idea/*
+*.png
