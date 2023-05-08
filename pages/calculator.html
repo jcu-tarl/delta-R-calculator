@@ -23,7 +23,8 @@
   <div class="col-12">
     <h2>How to use:</h2>
     <p>
-      Click on the map below to get a value for &delta;R. An explanation of what you see may be found on the
+      Enter Latitude and Longitude (or click on the map). If &delta;13C and/or &delta;18O are known, enter those, and
+      click the button to calculate &Delta;R. An explanation of what you see may be found on the
       <a href="#about">about page</a>.
     </p>
   </div>
@@ -33,6 +34,43 @@
   <form>
     <fieldset>
       <div class="row">
+        <div class="form-group col-lg-6">
+          <label for="longitude">Longitude:</label>
+          <input type="number" step=".000001" class="form-control" id="longitude" aria-describedby="longitude"
+                 placeholder="Enter decimal longitude">
+        </div>
+
+        <div class="form-group col-lg-6">
+          <label for="latitude">Latitude:</label>
+          <input type="number" step=".000001" class="form-control" id="latitude" aria-describedby="latitude"
+                 placeholder="Enter decimal latitude">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <label for="d13C">&delta;13C:</label>
+          <input type="number" step=".000001" class="form-control" id="d13C" aria-describedby="d13C"
+                 placeholder="Enter &delta;13C">
+          <small id="d13Chelp" class="form-text text-muted">
+            A zero value will influence the result. If no &delta;13C value available, empty the cell.
+          </small>
+        </div>
+        <div class="form-group col-lg-6">
+          <label for="d18O">&delta;180:</label>
+          <input type="number" step=".000001" class="form-control" id="d18O" aria-describedby="d18O"
+                 placeholder="Enter &delta;18O">
+          <small id="d18Ohelp" class="form-text text-muted">
+            A zero value will influence the result. If no &delta;18O value available, empty the cell.
+          </small>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <button type="button" class="btn btn-primary btn-lg btn-block" onclick="calculate_deltaR()">
+            Calculate &Delta;R
+          </button>
+        </div>
         <div class="col-lg-6">
           <div id="result"></div>
           test2
@@ -44,6 +82,7 @@
     </fieldset>
   </form>
 </div>
+
 
 <div class="row text-center mt-3">
   <div class="col col-12">
