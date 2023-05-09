@@ -33,7 +33,38 @@
       for the heterogeneous distribution of marine 14C, we recommend using a regionally specific ΔR value
       calculated using the Australian ΔR Calculator, available at: https://delta-r-calc.jcu.io/.</p>
     </p>
+  </div>  
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <h2>Method</h2>
+    <p>
+      Kriging, a Gaussian process regression, was used to interpolate DR values around the Australian coast,
+      using Python tools from the SciKit GStat package (Mälicke et al. 2021). Different models were fit against the variogram data,
+      with the spherical variogram returning the lowest error chosen. A semi-variogram was produced by plotting the semi-variance against
+      lag for the point pairs in the data set. The spherical model was applied to the kriging function and kriging was performed for all
+      pixels with a size of 10 km within a rectangular region bounding the Australian mainland and Tasmania. The Australian Equal Albers
+      projection EPSG:3577 was adopted to minimise distortion. Results were masked to a 300 km border around the coast. The outputs resulted
+      in two raster images, one representing the kriged DR values, and the other the Error Variance, of which the square root represents the
+      standard error of the interpolation process. To account for both the standard errors of the original DR measurements, and those of the
+      interpolation process, a further interpolation of measurement standard errors was performed, creating a measurement standard error surface.
+      The two error surfaces were combined by vector geometry (geometric mean) to produce an overall standard error surface.
+      For full details see the article cited below.
+    </p>
+  </div>  
+</div>
+
+<div class=""row>
+  <div class="col-12">
+    <h2>How to cite:</h2>
+    <p>
+      Ulm, S., D. O’Grady, F. Petchey, Q. Hua, G. Jacobsen, L. Linnenlucke, B. David, D. Rosendahl, M.M.E. Bunbury, M.I. Bird
+      and P.J. Reimer submitted Australian marine radiocarbon reservoir effects: DR atlas and DR calculator for Australian mainland
+      coasts and near-shore islands. <i>Radiocarbon</i>.
+    </p>
   </div>
+</div>
 
 <div class="row">
   <div class="col-12">
