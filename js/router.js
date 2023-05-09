@@ -37,7 +37,7 @@ function calculate_query_param_deltaR() {
 	const re = /\?(\d+),(\d+)/;
 	var colrow = re.exec(queryString);
     get_coords(colrow);
-    dr = deltar(xy[1],xy[2]);
+    dr = deltar(colrow[1],colrow[2]);
     updateResult(dr);
 }
 
