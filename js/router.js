@@ -23,13 +23,13 @@ function updateResult(result){
 function calculate_deltaR(){
     var longitude = document.getElementById('longitude').value;
     var latitude = document.getElementById('latitude').value;
-    console.log(longitude, latitude);
-	// if(!latitude || !longitude){
-	// 	document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
-	// 	return 0;
-	// }
-    // var dr = dr_from_longlat(longitude, latitude);
-    // updateResult(dr);
+    // console.log(longitude, latitude);
+	if(!latitude || !longitude){
+		document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
+		return 0;
+	}
+    var dr = dr_from_longlat(longitude, latitude);
+    updateResult(dr);
 }
 
 function calculate_query_param_deltaR() {
@@ -106,9 +106,10 @@ function get_container() {
 }
 
 function dr_from_longlat(long, lat){
-    en = proj4('EPSG:4326','EPSG:3577',[long, lat]);
-    loc = en_to_rowcol(en[0],en[1]);
-    return deltar(loc[0],loc[1]);
+    // en = proj4('EPSG:4326','EPSG:3577',[long, lat]);
+    // loc = en_to_rowcol(en[0],en[1]);
+    // return deltar(loc[0],loc[1]);
+    return "Long "+ long;
 }
 
 function deltar(x,y){
