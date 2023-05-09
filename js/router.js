@@ -23,7 +23,7 @@ function updateResult(result){
 function calculate_deltaR(){
     var longitude = parseFloat(document.getElementById('longitude').value);
     var latitude = parseFloat(document.getElementById('latitude').value);
-    // console.log(longitude, latitude);
+    console.log(longitude, latitude);
 	if(!latitude || !longitude){
 		document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
 		return 0;
