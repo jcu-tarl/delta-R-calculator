@@ -29,7 +29,6 @@ function calculate_query_param_deltaR() {
 	const queryString = window.location.href;
 	const re = /\?(\d+),(\d+)/;
 	var xy = re.exec(queryString);
-    console.log(xy);
     get_coords(xy);
     dr = deltar(xy[1],xy[2]);
     updateResult(dr);
