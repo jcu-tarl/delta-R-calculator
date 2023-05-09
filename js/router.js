@@ -12,7 +12,7 @@ function get_coords(colrow){
     longlat = colrow_to_longlat(colrow[1],colrow[2])
     document.getElementById('longitude').value = longlat[0].toFixed(6);
     document.getElementById('latitude').value = longlat[1].toFixed(6);
-    console.log(xy[1],xy[2])
+    console.log(colrow[1],colrow[2])
 }
 
 function updateResult(result){
