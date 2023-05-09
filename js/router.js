@@ -17,7 +17,7 @@ function get_coords(xy){
 
 function updateResult(result){
     document.getElementById("result").innerHTML=""
-            + "<div class='alert alert-success' role='alert'>&Delta;R: " + dr +"</div>";
+            + "<div class='alert alert-success' role='alert'>&Delta;R: " + result +"</div>";
 }
 
 function calculate_deltaR(){
