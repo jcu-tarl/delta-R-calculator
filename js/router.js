@@ -45,7 +45,7 @@ function dr_from_longlat(long, lat){
     en = proj4('EPSG:4326','EPSG:3577',[long, lat]);
     loc = en_to_colrow(en[0],en[1]);
     // console.log(loc[0], loc[1]);
-    return deltar(loc[1],loc[0]);
+    return deltar(loc[0],loc[1]);
 }
 
 function deltar(x,y){
