@@ -12,7 +12,7 @@ function get_coords(colrow){
     longlat = colrow_to_longlat(colrow[1],colrow[2])
     document.getElementById('longitude').value = longlat[0].toFixed(6);
     document.getElementById('latitude').value = longlat[1].toFixed(6);
-    console.log(colrow[1],colrow[2])
+    // console.log(colrow[1],colrow[2])
 }
 
 function updateResult(result){
@@ -23,7 +23,7 @@ function updateResult(result){
 function calculate_deltaR(){
     var longitude = parseFloat(document.getElementById('longitude').value);
     var latitude = parseFloat(document.getElementById('latitude').value);
-    console.log(longitude, latitude);
+    // console.log(longitude, latitude);
 	if(!latitude || !longitude){
 		document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
 		return 0;
@@ -44,11 +44,12 @@ function calculate_query_param_deltaR() {
 function dr_from_longlat(long, lat){
     en = proj4('EPSG:4326','EPSG:3577',[long, lat]);
     loc = en_to_colrow(en[0],en[1]);
-    console.log(loc[0], loc[1]);
+    // console.log(loc[0], loc[1]);
     return deltar(loc[1],loc[0]);
 }
 
 function deltar(x,y){
+    console.log(x, y);
     var dr = 999, sigma = 999;
     if (x > 0 && x < dr_pos.cols && y > 0 && y < dr_pos.rows){
         dr = dr_vals[y][x];
