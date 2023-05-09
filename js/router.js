@@ -23,12 +23,13 @@ function updateResult(result){
 function calculate_deltaR(){
     var longitude = document.getElementById('longitude').value;
     var latitude = document.getElementById('latitude').value;
-	if(!latitude || !longitude){
-		document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
-		return 0;
-	}
-    var dr = dr_from_longlat(longitude, latitude);
-    updateResult(dr);
+    console.log(longitude, latitude);
+	// if(!latitude || !longitude){
+	// 	document.getElementById("result").innerHTML="<div class='alert alert-danger' role='alert'>You must select a point on the Australian coast</div>";
+	// 	return 0;
+	// }
+    // var dr = dr_from_longlat(longitude, latitude);
+    // updateResult(dr);
 }
 
 function calculate_query_param_deltaR() {
