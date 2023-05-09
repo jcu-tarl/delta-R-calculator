@@ -8,8 +8,8 @@ var dr_pos = {
 	cols: 719
 };
 
-var dy = (dr_pos.south - dr_pos.north)/dr_pos.rows;
-var dx = (dr_pos.east - dr_pos.west)/dr_pos.cols;
+var dy = (dr_pos.south - dr_pos.north)/(dr_pos.rows-1);
+var dx = (dr_pos.east - dr_pos.west)/(dr_pos.cols-1);
 
 function en_to_colrow(easting, northing){
 	col = Math.round((easting - dr_pos.west)/dx);
