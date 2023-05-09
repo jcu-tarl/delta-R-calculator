@@ -18,8 +18,8 @@ function en_to_colrow(easting, northing){
 }
 
 function colrow_to_longlat(col, row){
-	easting = ((col-0.5) * dx) + dr_pos.west;
-	northing = ((row-0.5) * dy) + dr_pos.north;
+	easting = (col * dx) + dr_pos.west;
+	northing = (row * dy) + dr_pos.north;
 	return proj4('EPSG:3577','EPSG:4326',[easting, northing]);
 }
 
