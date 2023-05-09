@@ -8,8 +8,8 @@ var dr_pos = {
 	cols: 719
 };
 
-var dy = (dr_pos.south - dr_pos.north)/(dr_pos.rows-1);
-var dx = (dr_pos.east - dr_pos.west)/(dr_pos.cols-1);
+var dy = (dr_pos.south - dr_pos.north)/dr_pos.rows;
+var dx = (dr_pos.east - dr_pos.west)/dr_pos.cols;
 
 function en_to_colrow(easting, northing){
 	col = Math.round((easting - dr_pos.west)/dx);
@@ -18,8 +18,8 @@ function en_to_colrow(easting, northing){
 }
 
 function rowcol_to_longlat(row, col){
-	easting = (col * dx) + dr_pos.west;
-	northing = (row * dy) + dr_pos.north;
+	easting = ((col-0.5) * dx) + dr_pos.west;
+	northing = ((row-0.5) * dy) + dr_pos.north;
 	return proj4('EPSG:3577','EPSG:4326',[easting, northing]);
 }
 
