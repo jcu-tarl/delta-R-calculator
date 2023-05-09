@@ -26,7 +26,7 @@ function calculate_deltaR(){
 }
 
 function calculate_query_param_deltaR() {
-	const queryString = window.location;
+	const queryString = window.location.href;
 	const re = /\?(\d+),(\d+)/;
 	var xy = re.exec(queryString);
     get_coords(xy);
