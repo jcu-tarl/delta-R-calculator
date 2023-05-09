@@ -9,7 +9,7 @@ var loaded = '';
 proj4.defs("EPSG:3577","+proj=aea +lat_0=0 +lon_0=132 +lat_1=-18 +lat_2=-36 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
 
 function get_coords(xy){
-    longlat = rowcol_to_longlat(xy[1],xy[2])
+    longlat = colrow_to_longlat(xy[1],xy[2])
     document.getElementById('longitude').value = longlat[0].toFixed(6);
     document.getElementById('latitude').value = longlat[1].toFixed(6);
     console.log(xy[1],xy[2])
