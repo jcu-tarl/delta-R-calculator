@@ -11,10 +11,10 @@ var dr_pos = {
 var dy = (dr_pos.south - dr_pos.north)/dr_pos.rows;
 var dx = (dr_pos.east - dr_pos.west)/dr_pos.cols;
 
-function en_to_rowcol(easting, northing){
-	x = Math.round((easting - dr_pos.west)/dx);
-	y = Math.round((northing - dr_pos.north)/dy);
-	return [x, y];
+function en_to_colrow(easting, northing){
+	col = Math.round((easting - dr_pos.west)/dx);
+	row = Math.round((northing - dr_pos.north)/dy);
+	return [col, row];
 }
 
 function rowcol_to_longlat(row, col){
