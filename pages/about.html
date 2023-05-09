@@ -19,11 +19,11 @@
       These studies are based on limited samples of sometimes dubious quality representing only selective
       parts of Australia’s lengthy coastline.</p>
       <p>We systematically examine spatial variability in the marine
-      reservoir effect (DR) through analysis of 292 live-collected mollusc samples across the Australian
+      reservoir effect (ΔR) through analysis of 292 live-collected mollusc samples across the Australian
       mainland coasts and near-shore islands subject to strict selection criteria. This study presents
       233 new ΔR values combined with an evaluation of 59 previously published values.</p>
       <p>Results demonstrate significant spatial variability in marine radiocarbon reservoir effects across
-      the study region. DR values range from 68±24 14C years off the Pilbara region of Western Australia
+      the study region. ΔR values range from 68±24 14C years off the Pilbara region of Western Australia
       to -337±46 in the southern Gulf of Carpentaria in Queensland. Most sets of local values exhibit
       internal consistency, reflecting the dominant influence of regional oceanography, including depletion
       in ΔR values southwards along the eastern Australian coastline coincident with the East Australian
@@ -40,14 +40,14 @@
   <div class="col-12">
     <h2>Method</h2>
     <p>
-      Kriging, a Gaussian process regression, was used to interpolate DR values around the Australian coast,
+      Kriging, a Gaussian process regression, was used to interpolate ΔR values around the Australian coast,
       using Python tools from the SciKit GStat package (Mälicke et al. 2021). Different models were fit against the variogram data,
       with the spherical variogram returning the lowest error chosen. A semi-variogram was produced by plotting the semi-variance against
       lag for the point pairs in the data set. The spherical model was applied to the kriging function and kriging was performed for all
       pixels with a size of 10 km within a rectangular region bounding the Australian mainland and Tasmania. The Australian Equal Albers
       projection EPSG:3577 was adopted to minimise distortion. Results were masked to a 300 km border around the coast. The outputs resulted
-      in two raster images, one representing the kriged DR values, and the other the Error Variance, of which the square root represents the
-      standard error of the interpolation process. To account for both the standard errors of the original DR measurements, and those of the
+      in two raster images, one representing the kriged ΔR values, and the other the Error Variance, of which the square root represents the
+      standard error of the interpolation process. To account for both the standard errors of the original ΔR measurements, and those of the
       interpolation process, a further interpolation of measurement standard errors was performed, creating a measurement standard error surface.
       The two error surfaces were combined by vector geometry (geometric mean) to produce an overall standard error surface.
       For full details see the article cited below.
