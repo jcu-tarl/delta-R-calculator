@@ -8,8 +8,8 @@ var loaded = '';
 
 proj4.defs("EPSG:3577","+proj=aea +lat_0=0 +lon_0=132 +lat_1=-18 +lat_2=-36 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
 
-function get_coords(xy){
-    longlat = colrow_to_longlat(xy[1],xy[2])
+function get_coords(colrow){
+    longlat = colrow_to_longlat(colrow[1],colrow[2])
     document.getElementById('longitude').value = longlat[0].toFixed(6);
     document.getElementById('latitude').value = longlat[1].toFixed(6);
     console.log(xy[1],xy[2])
@@ -35,8 +35,8 @@ function calculate_deltaR(){
 function calculate_query_param_deltaR() {
 	const queryString = window.location.href;
 	const re = /\?(\d+),(\d+)/;
-	var xy = re.exec(queryString);
-    get_coords(xy);
+	var colrow = re.exec(queryString);
+    get_coords(colrow);
     dr = deltar(xy[1],xy[2]);
     updateResult(dr);
 }
