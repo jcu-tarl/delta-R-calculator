@@ -43,7 +43,7 @@ function calculate_query_param_deltaR() {
 
 function dr_from_longlat(long, lat){
     en = proj4('EPSG:4326','EPSG:3577',[long, lat]);
-    console.log(en[0]);
+    // console.log(en[0]);
     loc = en_to_rowcol(en[0],en[1]);
     return deltar(loc[0],loc[1]);
 }
